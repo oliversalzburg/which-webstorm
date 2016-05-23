@@ -1,0 +1,6 @@
+.idea/deployment.xml
+.idea/workspace.xml
+
+coverage/
+node_modules/
+
