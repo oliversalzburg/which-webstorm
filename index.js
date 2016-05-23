@@ -32,7 +32,7 @@ function findManualWindows() {
 				throw new Error( "WebStorm not found" );
 			}
 
-			return path.join( entries[ 0 ], "bin/WebStorm.exe" );
+			return path.join( process.env[ "ProgramFiles(x86)" ], "JetBrains", entries[ 0 ], "bin/WebStorm.exe" );
 		} );
 }
 
