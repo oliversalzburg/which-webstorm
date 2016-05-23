@@ -1,6 +1,6 @@
 {
   "name": "which-webstorm",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Find WebStorm binary",
   "main": "index.js",
   "bin": {
@@ -14,7 +14,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/oliversalzburg/find-webstorm.git"
+    "url": "https://github.com/oliversalzburg/which-webstorm.git"
   },
   "author": "Oliver Salzburg <oliver.salzburg@gmail.com>",
   "license": "MIT",
