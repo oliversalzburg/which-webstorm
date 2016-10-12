@@ -20,19 +20,25 @@ function findManual() {
 			return findManualWindows();
 
 		default:
-			throw new Error( `Platform '${process.platform}' is not supported yet.` );
+			throw new Error( `Platform '${process.platform}' is not supported.` );
 	}
 }
 
 function findManualWindows() {
 	return fs.readdirAsync( path.join( process.env[ "ProgramFiles(x86)" ], "JetBrains" ) )
 		.filter( entry => entry.match( /WebStorm/ ) )
+		.map( entry => {
+			return path.join( process.env[ "ProgramFiles(x86)" ], "JetBrains", entry, "bin/WebStorm.exe" );
+		} )
+		.filter( candidate => fs.statAsync( candidate )
+			.then( () => true )
+			.catch( () => false ) )
 		.then( entries => {
 			if( !entries || !entries.length ) {
 				throw new Error( "WebStorm not found" );
 			}
 
-			return path.join( process.env[ "ProgramFiles(x86)" ], "JetBrains", entries[ 0 ], "bin/WebStorm.exe" );
+			return entries[ 0 ];
 		} );
 }
 
