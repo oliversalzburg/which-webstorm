@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 "use strict";
 
 const Promise = require( "bluebird" );
@@ -42,11 +44,11 @@ function findManualWindows() {
 		} );
 }
 
-if( module.parent ) {
+if( module.parent ) {// jscs:ignore requirePaddingNewLinesBeforeExport
 	module.exports = findWebstorm;
-	return;
-}
 
-findWebstorm()
-	.then( console.log )
-	.catch( console.error );
+} else {
+	findWebstorm()
+		.then( console.log )
+		.catch( console.error );
+}
