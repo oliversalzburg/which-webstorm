@@ -9,12 +9,13 @@ const path       = require( "path" );
 const whichAsync = Promise.promisify( require( "which" ) );
 
 function findWebstorm() {
-	return whichAsync( "webstorm" )
+	return whichAsync( findWebstorm.webstormBinary() )
 		.catch( () => {
 			// Not found on PATH, attempt manual lookup.
 			return findManual();
 		} );
 }
+findWebstorm.webstormBinary = () => process.arch === "x64" ? "webstorm64.exe" : "webstorm.exe";
 
 function findManual() {
 	switch( process.platform ) {
@@ -30,7 +31,7 @@ function findManualWindows() {
 	return fs.readdirAsync( path.join( process.env[ "ProgramFiles(x86)" ], "JetBrains" ) )
 		.filter( entry => entry.match( /WebStorm/ ) )
 		.map( entry => {
-			return path.join( process.env[ "ProgramFiles(x86)" ], "JetBrains", entry, "bin/WebStorm.exe" );
+			return path.join( process.env[ "ProgramFiles(x86)" ], "JetBrains", entry, "bin", findWebstorm.webstormBinary() );
 		} )
 		.filter( candidate => fs.statAsync( candidate )
 			.then( () => true )

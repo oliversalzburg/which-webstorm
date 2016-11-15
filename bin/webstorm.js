@@ -21,7 +21,7 @@ whichWebstorm()
 			}
 		}
 
-		return execa( webstorm, args.length ? args : [ process.cwd() ], {
+		return execa( webstorm, args.length ? args : [], {
 			cwd : process.cwd()
 		} );
 	} );
