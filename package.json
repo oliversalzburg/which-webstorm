@@ -14,8 +14,8 @@
     "webstorm"
   ],
   "repository": {
-    "type": "git",
-    "url": "https://github.com/oliversalzburg/which-webstorm.git"
+    "url": "https://github.com/oliversalzburg/which-webstorm.git",
+    "type": "git"
   },
   "author": "Oliver Salzburg <oliver.salzburg@gmail.com>",
   "license": "MIT",
