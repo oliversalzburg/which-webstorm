@@ -1,4 +1,6 @@
 .idea/deployment.xml
+.idea/markdown-navigator/
+.idea/markdown-navigator.*
 .idea/workspace.xml
 
 .nyc_output/
