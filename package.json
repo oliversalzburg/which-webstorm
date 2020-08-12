@@ -8,6 +8,8 @@
     "which-webstorm": "index.js"
   },
   "scripts": {
+    "style:check":"prettier --check .",
+    "style:write":"prettier --write .",
     "test": "nyc mocha"
   },
   "keywords": [
@@ -30,6 +32,7 @@
     "chai-as-promised": "^7.1.1",
     "mocha": "^8.1.1",
     "mock-fs": "^4.12.0",
-    "nyc": "^15.1.0"
+    "nyc": "^15.1.0",
+    "prettier": "2.0.5"
   }
 }
