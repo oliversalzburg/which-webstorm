@@ -2,6 +2,8 @@
 
 Finds WebStorm
 
+[![Build Status](https://travis-ci.org/oliversalzburg/which-webstorm.svg?branch=master)](https://travis-ci.org/oliversalzburg/which-webstorm)
+
 ## Usage
 
 ### As a module
