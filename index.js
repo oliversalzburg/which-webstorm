@@ -57,7 +57,7 @@ function findManualWindows() {
 		} );
 }
 
-if( module.parent ) {// jscs:ignore requirePaddingNewLinesBeforeExport
+if( module.parent ) {
 	module.exports = findWebstorm;
 
 } else {
