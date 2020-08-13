@@ -8,8 +8,8 @@
     "which-webstorm": "index.js"
   },
   "scripts": {
-    "style:check":"prettier --check .",
-    "style:write":"prettier --write .",
+    "style:check": "prettier --check .",
+    "style:write": "prettier --write .",
     "test": "nyc mocha"
   },
   "keywords": [
