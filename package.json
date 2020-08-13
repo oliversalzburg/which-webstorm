@@ -8,8 +8,8 @@
     "which-webstorm": "index.js"
   },
   "scripts": {
-    "style:check":"prettier --check .",
-    "style:write":"prettier --write .",
+    "style:check": "prettier --check .",
+    "style:write": "prettier --write .",
     "test": "nyc mocha"
   },
   "keywords": [
@@ -22,7 +22,6 @@
   "author": "Oliver Salzburg <oliver.salzburg@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "bluebird": "^3.7.2",
     "execa": "^4.0.3",
     "semver": "^7.3.2",
     "which": "^2.0.2"
