@@ -10,7 +10,8 @@ Finds WebStorm
 
 ```js
 const whichWebstorm = require("which-webstorm");
-console.log(whichWebstorm()); // prints path to WebStorm binary
+console.log(await whichWebstorm()); // prints path to WebStorm binary
+console.log(whichWebstorm.sync()); // prints path to WebStorm binary
 ```
 
 ### As a command

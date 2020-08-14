@@ -52,7 +52,7 @@ describe("which-webstorm", () => {
 		});
 	});
 
-	describe("eap directory", () => {
+	describe("eap directory (async)", () => {
 		let originalArch;
 		before(() => {
 			originalArch = process.arch;
@@ -81,7 +81,72 @@ describe("which-webstorm", () => {
 		});
 	});
 
+	describe("eap directory", () => {
+		let originalArch;
+		before(() => {
+			originalArch = process.arch;
+			Object.defineProperty(process, "arch", {
+				value: "x64",
+			});
+		});
+		after(() => {
+			Object.defineProperty(process, "arch", {
+				value: originalArch,
+			});
+		});
+
+		before(() =>
+			mockFs({
+				"C:\\Program Files (x86)\\JetBrains\\WebStorm 163.9999\\bin\\webstorm64.exe":
+					"foo",
+			})
+		);
+		after(() => mockFs.restore());
+
+		it("should return the webstorm binary", () => {
+			return expect(whichWebstorm.sync()).to.equal(
+				"C:\\Program Files (x86)\\JetBrains\\WebStorm 163.9999\\bin\\webstorm64.exe"
+			);
+		});
+	});
+
 	describe("return latest", () => {
+		let originalArch;
+		before(() => {
+			originalArch = process.arch;
+			Object.defineProperty(process, "arch", {
+				value: "x64",
+			});
+		});
+		after(() => {
+			Object.defineProperty(process, "arch", {
+				value: originalArch,
+			});
+		});
+
+		before(() =>
+			mockFs({
+				"C:\\Program Files (x86)\\JetBrains\\WebStorm 2020.1\\bin\\webstorm64.exe":
+					"foo",
+				"C:\\Program Files (x86)\\JetBrains\\WebStorm 17.9.0\\bin\\webstorm64.exe":
+					"foo",
+				"C:\\Program Files (x86)\\JetBrains\\WebStorm 2020.1.4\\bin\\webstorm64.exe":
+					"foo",
+				"C:\\Program Files (x86)\\JetBrains\\WebStorm 2020.2\\bin\\webstorm64.exe":
+					"foo",
+				"C:\\Program Files (x86)\\JetBrains\\WebStorm 163.9999\\bin\\webstorm64.exe":
+					"foo",
+			})
+		);
+		after(() => mockFs.restore());
+
+		it("should return the LATEST webstorm binary", () => {
+			return expect(whichWebstorm.sync()).to.equal(
+				"C:\\Program Files (x86)\\JetBrains\\WebStorm 2020.2\\bin\\webstorm64.exe"
+			);
+		});
+	});
+	describe("return latest (async)", () => {
 		let originalArch;
 		before(() => {
 			originalArch = process.arch;
