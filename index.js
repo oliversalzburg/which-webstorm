@@ -30,7 +30,7 @@ class WebStormLocator {
 	}
 
 	findJetbrainsProducts() {
-		return fs.readdir(path.join(process.env["ProgramFiles(x86)"], "JetBrains"));
+		return fs.readdirSync(path.join(process.env["ProgramFiles(x86)"], "JetBrains"));
 	}
 	findJetbrainsProductsAsync() {
 		return fs.promises.readdir(
