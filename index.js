@@ -15,16 +15,14 @@ class WebStormLocator {
 	findWebstorm() {
 		try {
 			return which.sync(this.webstormBinary());
-
 		} catch (error) {
 			// Not found on PATH, attempt manual lookup.
 			return this.findManual();
 		}
 	}
-	findWebstormAsync() {
+	async findWebstormAsync() {
 		try {
 			return await which(this.webstormBinary());
-
 		} catch (error) {
 			// Not found on PATH, attempt manual lookup.
 			return this.findManual();
@@ -32,9 +30,7 @@ class WebStormLocator {
 	}
 
 	findJetbrainsProducts() {
-		return fs.readdir(
-			path.join(process.env["ProgramFiles(x86)"], "JetBrains")
-		);
+		return fs.readdir(path.join(process.env["ProgramFiles(x86)"], "JetBrains"));
 	}
 	findJetbrainsProductsAsync() {
 		return fs.promises.readdir(
@@ -61,7 +57,7 @@ class WebStormLocator {
 		}
 	}
 
-	findManualWindows(jetbrainsProducts) {
+	findManualWindows(jetbrainsProducts, validateSynchronously = true) {
 		return this._getLatest(
 			jetbrainsProducts
 				.filter((entry) => entry.match(/WebStorm/))
@@ -74,12 +70,7 @@ class WebStormLocator {
 						this.webstormBinary()
 					);
 				})
-				.filter((candidate) =>
-					fs.promises
-						.stat(candidate)
-						.then(() => true)
-						.catch(() => false)
-				)
+				.filter((candidate) => fs.statSync(candidate))
 				.map((entry) => {
 					const ver = entry.match(/WebStorm[^0-9]([0-9\.]+)/) || ["", ""];
 					return {
