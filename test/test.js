@@ -6,12 +6,14 @@ const after = mocha.after;
 const before = mocha.before;
 const chai = require("chai");
 const chaiAsPromised = require("chai-as-promised");
+const chaiExec = require("@jsdevtools/chai-exec");
 const describe = mocha.describe;
 const expect = require("chai").expect;
 const it = mocha.it;
 const mockFs = require("mock-fs");
 
 chai.use(chaiAsPromised);
+chai.use(chaiExec);
 
 describe("which-webstorm", () => {
 	const whichWebstorm = require("..");
@@ -180,6 +182,12 @@ describe("which-webstorm", () => {
 			return expect(whichWebstorm()).to.eventually.equal(
 				"C:\\Program Files (x86)\\JetBrains\\WebStorm 2020.2\\bin\\webstorm64.exe"
 			);
+		});
+	});
+	describe("CLI", () => {
+		it("should not throw when being executed", () => {
+			const cli = chaiExec("node index.js");
+			return expect(cli).to.exit.with.code(0);
 		});
 	});
 });
