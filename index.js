@@ -70,7 +70,7 @@ class WebStormLocator {
 						this.webstormBinary()
 					);
 				})
-				.filter((candidate) => fs.existsSync(candidate) && fs.statSync(candidate))
+				.filter((candidate) => fs.existsSync(candidate))
 				.map((entry) => {
 					const ver = entry.match(/WebStorm[^0-9]([0-9\.]+)/) || ["", ""];
 					return {
