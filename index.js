@@ -70,7 +70,7 @@ class WebStormLocator {
 						this.webstormBinary()
 					);
 				})
-				.filter((candidate) => fs.statSync(candidate))
+				.filter((candidate) => fs.existsSync(candidate))
 				.map((entry) => {
 					const ver = entry.match(/WebStorm[^0-9]([0-9\.]+)/) || ["", ""];
 					return {
@@ -104,5 +104,5 @@ if (module.parent) {
 	// Also export the class itself for external consumption.
 	module.exports.WebStormLocator = WebStormLocator;
 } else {
-	new WebStormLocator().findWebstorm().then(console.log).catch(console.error);
+	new WebStormLocator().findWebstormAsync().then(console.log).catch(console.error);
 }
