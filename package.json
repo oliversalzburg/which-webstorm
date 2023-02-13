@@ -23,7 +23,7 @@
   "author": "Oliver Salzburg <oliver.salzburg@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "execa": "^6.1.0",
+    "execa": "^7.0.0",
     "semver": "^7.3.2",
     "which": "^3.0.0"
   },
