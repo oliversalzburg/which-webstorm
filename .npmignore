@@ -7,4 +7,5 @@ node_modules/
 .editorconfig
 .gitattributes
 .prettierignore
+.prettierrc.json
 renovate.json
