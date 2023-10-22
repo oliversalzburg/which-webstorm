@@ -2,7 +2,7 @@
 
 Finds WebStorm
 
-[![Build Status](https://travis-ci.org/oliversalzburg/which-webstorm.svg?branch=master)](https://travis-ci.org/oliversalzburg/which-webstorm)
+[![QA](https://github.com/oliversalzburg/which-webstorm/actions/workflows/qa.yml/badge.svg)](https://github.com/oliversalzburg/which-webstorm/actions/workflows/qa.yml)
 
 ## Usage
 
