@@ -34,7 +34,7 @@
   "devDependencies": {
     "@jsdevtools/chai-exec": "2.1.1",
     "@types/node": "20.11.0",
-    "chai": "4.4.0",
+    "chai": "4.4.1",
     "chai-as-promised": "7.1.1",
     "mocha": "10.2.0",
     "mock-fs": "5.2.0",
