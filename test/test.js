@@ -5,14 +5,12 @@ const mocha = require("mocha");
 const after = mocha.after;
 const before = mocha.before;
 const chai = require("chai");
-const chaiAsPromised = require("chai-as-promised");
 const chaiExec = require("@jsdevtools/chai-exec");
 const describe = mocha.describe;
 const expect = require("chai").expect;
 const it = mocha.it;
 const mockFs = require("mock-fs");
 
-chai.use(chaiAsPromised);
 chai.use(chaiExec);
 
 describe("which-webstorm", () => {
@@ -72,14 +70,19 @@ describe("which-webstorm", () => {
 			mockFs({
 				"C:\\Program Files (x86)\\JetBrains\\WebStorm 163.9999\\bin\\webstorm64.exe":
 					"foo",
-			})
+			}),
 		);
 		after(() => mockFs.restore());
 
-		it("should return the webstorm binary", () => {
-			return expect(whichWebstorm()).to.eventually.equal(
-				"C:\\Program Files (x86)\\JetBrains\\WebStorm 163.9999\\bin\\webstorm64.exe"
-			);
+		it("should return the webstorm binary", (done) => {
+			whichWebstorm()
+				.catch(done)
+				.then((result) => {
+					expect(result).to.equal(
+						"C:\\Program Files (x86)\\JetBrains\\WebStorm 163.9999\\bin\\webstorm64.exe",
+					);
+					done();
+				});
 		});
 	});
 
@@ -101,13 +104,13 @@ describe("which-webstorm", () => {
 			mockFs({
 				"C:\\Program Files (x86)\\JetBrains\\WebStorm 163.9999\\bin\\webstorm64.exe":
 					"foo",
-			})
+			}),
 		);
 		after(() => mockFs.restore());
 
 		it("should return the webstorm binary", () => {
 			return expect(whichWebstorm.sync()).to.equal(
-				"C:\\Program Files (x86)\\JetBrains\\WebStorm 163.9999\\bin\\webstorm64.exe"
+				"C:\\Program Files (x86)\\JetBrains\\WebStorm 163.9999\\bin\\webstorm64.exe",
 			);
 		});
 	});
@@ -138,13 +141,13 @@ describe("which-webstorm", () => {
 					"foo",
 				"C:\\Program Files (x86)\\JetBrains\\WebStorm 163.9999\\bin\\webstorm64.exe":
 					"foo",
-			})
+			}),
 		);
 		after(() => mockFs.restore());
 
 		it("should return the LATEST webstorm binary", () => {
 			return expect(whichWebstorm.sync()).to.equal(
-				"C:\\Program Files (x86)\\JetBrains\\WebStorm 2020.2\\bin\\webstorm64.exe"
+				"C:\\Program Files (x86)\\JetBrains\\WebStorm 2020.2\\bin\\webstorm64.exe",
 			);
 		});
 	});
@@ -174,14 +177,19 @@ describe("which-webstorm", () => {
 					"foo",
 				"C:\\Program Files (x86)\\JetBrains\\WebStorm 163.9999\\bin\\webstorm64.exe":
 					"foo",
-			})
+			}),
 		);
 		after(() => mockFs.restore());
 
-		it("should return the LATEST webstorm binary", () => {
-			return expect(whichWebstorm()).to.eventually.equal(
-				"C:\\Program Files (x86)\\JetBrains\\WebStorm 2020.2\\bin\\webstorm64.exe"
-			);
+		it("should return the LATEST webstorm binary", (done) => {
+			whichWebstorm()
+				.catch(done)
+				.then((result) => {
+					expect(result).to.equal(
+						"C:\\Program Files (x86)\\JetBrains\\WebStorm 2020.2\\bin\\webstorm64.exe",
+					);
+					done();
+				});
 		});
 	});
 	describe("CLI", () => {
