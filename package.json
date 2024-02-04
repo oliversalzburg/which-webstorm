@@ -38,7 +38,7 @@
     "mocha": "10.2.0",
     "mock-fs": "5.2.0",
     "nyc": "15.1.0",
-    "prettier": "3.2.4"
+    "prettier": "3.2.5"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
