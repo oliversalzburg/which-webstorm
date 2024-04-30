@@ -10,13 +10,13 @@
     "url": "https://github.com/oliversalzburg/which-webstorm.git"
   },
   "type": "module",
-  "main": "index.js",
+  "main": "output/main.js",
   "bin": {
-    "which-webstorm": "index.js",
+    "which-webstorm": "bin/bin.js",
     "wstorm": "bin/webstorm.js"
   },
   "scripts": {
-    "build": "node build.js",
+    "build": "tsc",
     "clean": "rm -rf ./output",
     "lint": "yarn run lint:all",
     "lint:all": "yarn run lint:eslint && yarn run lint:prettier && yarn run lint:tsc",
@@ -27,10 +27,10 @@
     "npm:publish:major": "npm version major && npm publish",
     "npm:publish:minor": "npm version minor && npm publish",
     "npm:publish:patch": "npm version patch && npm publish",
-    "test": "tsc && node $(yarn bin mocha) output/*.test.js",
+    "test": "yarn build && node $(yarn bin mocha) output/*.test.js",
     "test:coverage": "tsc && c8 --reporter=html-spa node $(yarn bin mocha) output/*.test.js"
   },
-  "types": "index.d.ts",
+  "types": "output/main.d.ts",
   "dependencies": {
     "@oliversalzburg/js-utils": "0.0.28",
     "execa": "8.0.1",
@@ -47,7 +47,6 @@
     "@types/which": "3.0.3",
     "c8": "9.1.0",
     "chai": "5.1.0",
-    "esbuild": "0.20.2",
     "eslint": "8.57.0",
     "globals": "15.1.0",
     "lint-staged": "15.2.2",
