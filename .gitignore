@@ -1,6 +1,15 @@
 .idea/deployment.xml
 .idea/workspace.xml
 
-.nyc_output/
-node_modules/
+.yarn/*.*
+.yarn/cache/**
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
 
+build
+coverage
+node_modules
+output

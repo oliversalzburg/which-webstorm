@@ -1,49 +1,72 @@
 {
-  "$schema":"https://json.schemastore.org/package.json",
+  "$schema": "https://json.schemastore.org/package.json",
   "name": "which-webstorm",
   "version": "3.2.2",
   "description": "Find WebStorm binary",
-  "main": "index.js",
-  "types": "index.d.ts",
-  "bin": {
-    "wstorm": "bin/webstorm.js",
-    "which-webstorm": "index.js"
-  },
-  "scripts": {
-    "npm:publish": "npm publish",
-    "npm:publish:minor": "npm version minor && npm publish",
-    "npm:publish:patch": "npm version patch && npm publish",
-    "style:check": "prettier --check .",
-    "style:write": "prettier --write .",
-    "test": "nyc mocha"
-  },
-  "keywords": [
-    "webstorm"
-  ],
+  "license": "MIT",
+  "author": "Oliver Salzburg <oliver.salzburg@gmail.com>",
   "repository": {
     "type": "git",
     "url": "https://github.com/oliversalzburg/which-webstorm.git"
   },
-  "author": "Oliver Salzburg <oliver.salzburg@gmail.com>",
-  "license": "MIT",
+  "type": "module",
+  "main": "index.js",
+  "bin": {
+    "which-webstorm": "index.js",
+    "wstorm": "bin/webstorm.js"
+  },
+  "scripts": {
+    "build": "node build.js",
+    "clean": "rm -rf ./output",
+    "lint": "yarn run lint:all",
+    "lint:all": "yarn run lint:eslint && yarn run lint:prettier && yarn run lint:tsc",
+    "lint:eslint": "eslint .",
+    "lint:prettier": "prettier --check .",
+    "lint:tsc": "tsc --noEmit",
+    "npm:publish": "npm publish",
+    "npm:publish:major": "npm version major && npm publish",
+    "npm:publish:minor": "npm version minor && npm publish",
+    "npm:publish:patch": "npm version patch && npm publish",
+    "test": "tsc && node $(yarn bin mocha) output/*.test.js",
+    "test:coverage": "tsc && c8 --reporter=html-spa node $(yarn bin mocha) output/*.test.js"
+  },
+  "types": "index.d.ts",
   "dependencies": {
+    "@oliversalzburg/js-utils": "0.0.28",
     "execa": "8.0.1",
     "semver": "7.6.0",
     "which": "4.0.0"
   },
   "devDependencies": {
-    "@jsdevtools/chai-exec": "2.1.1",
+    "@eslint/js": "9.1.1",
+    "@types/chai": "4.3.14",
+    "@types/eslint": "8.56.10",
+    "@types/mocha": "10.0.6",
+    "@types/mock-fs": "4.13.4",
     "@types/node": "20.12.7",
-    "chai": "4.4.1",
+    "@types/which": "3.0.3",
+    "c8": "9.1.0",
+    "chai": "5.1.0",
+    "esbuild": "0.20.2",
+    "eslint": "8.57.0",
+    "globals": "15.0.0",
+    "lint-staged": "15.2.2",
     "mocha": "10.4.0",
     "mock-fs": "5.2.0",
-    "nyc": "15.1.0",
-    "prettier": "3.2.5"
+    "prettier": "3.2.5",
+    "prettier-package-json": "2.8.0",
+    "prettier-plugin-organize-imports": "3.2.4",
+    "typescript": "5.4.5",
+    "typescript-eslint": "7.7.1"
+  },
+  "keywords": [
+    "webstorm"
+  ],
+  "engines": {
+    "node": ">= 18"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },
-  "engines": {
-    "node": ">= 18"
-  }
+  "packageManager": "yarn@4.1.1"
 }

@@ -18,8 +18,20 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Enable Corepack
+        run: corepack enable
 
-      - name: Run tests
-        run: npm test
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Lint ESLint
+        run: yarn lint:eslint
+      - name: Lint TSC
+        run: yarn lint:tsc
+      - name: Lint Prettier
+        run: yarn lint:prettier
+      - name: Build
+        run: yarn build
+
+      - name: Test
+        run: yarn test

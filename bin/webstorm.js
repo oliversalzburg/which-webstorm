@@ -1,34 +1,32 @@
 #!/usr/bin/env node
 
-"use strict";
+import { execa } from "execa";
+import { statSync } from "node:fs";
+import { resolve } from "node:path";
+import { WebStormLocator } from "../output/main.js";
 
-const execa = require("execa");
-const fs = require("fs");
-const path = require("path");
-const whichWebstorm = require("..");
+new WebStormLocator().findWebstormAsync().then(webstorm => {
+  const args = process.argv.splice(2);
 
-whichWebstorm().then((webstorm) => {
-	const args = process.argv.splice(2);
+  if (args.length) {
+    return Promise.all(
+      args.map(arg => {
+        // Attempt to construct absolute path.
+        // This ensures that WebStorm doesn't try to resolve paths relative to
+        // the location where the webstorm binary is located.
+        const fullPath = resolve(arg);
+        if (statSync(fullPath)) {
+          arg = fullPath;
+        }
 
-	if (args.length) {
-		return Promise.all(
-			args.map((arg) => {
-				// Attempt to construct absolute path.
-				// This ensures that WebStorm doesn't try to resolve paths relative to
-				// the location where the webstorm binary is located.
-				const fullPath = path.resolve(arg);
-				if (fs.statSync(fullPath)) {
-					arg = fullPath;
-				}
+        return execa(webstorm, [arg], {
+          cwd: process.cwd(),
+        });
+      }),
+    );
+  }
 
-				return execa(webstorm, [arg], {
-					cwd: process.cwd(),
-				});
-			})
-		);
-	}
-
-	return execa(webstorm, {
-		cwd: process.cwd(),
-	});
+  return execa(webstorm, {
+    cwd: process.cwd(),
+  });
 });

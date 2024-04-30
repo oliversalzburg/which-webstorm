@@ -2,14 +2,14 @@
 
 Finds WebStorm
 
-[![QA](https://github.com/oliversalzburg/which-webstorm/actions/workflows/qa.yml/badge.svg)](https://github.com/oliversalzburg/which-webstorm/actions/workflows/qa.yml)
+[![QA](https://github.com/oliversalzburg/which-webstorm/actions/workflows/test.yml/badge.svg)](https://github.com/oliversalzburg/which-webstorm/actions/workflows/test.yml)
 
 ## Usage
 
 ### As a module
 
 ```js
-const whichWebstorm = require("which-webstorm");
+import whichWebstorm from "which-webstorm";
 console.log(await whichWebstorm()); // prints path to WebStorm binary
 console.log(whichWebstorm.sync()); // prints path to WebStorm binary
 ```
