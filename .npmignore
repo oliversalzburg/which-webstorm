@@ -1,4 +1,5 @@
 .editorconfig
+.gitattributes
 .github/
 .idea/
 .prettierignore
