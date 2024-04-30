@@ -13,7 +13,7 @@ eslint.config.js
 lint-staged.config.js
 node_modules/
 output/*.test.*
-output/tsconfig.buildinfo
+output/tsconfig.tsbuildinfo
 prettier.config.js
 renovate.json
 source/
