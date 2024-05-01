@@ -43,7 +43,7 @@
     "@types/eslint": "8.56.10",
     "@types/mocha": "10.0.6",
     "@types/mock-fs": "4.13.4",
-    "@types/node": "20.12.7",
+    "@types/node": "20.12.8",
     "@types/which": "3.0.3",
     "c8": "9.1.0",
     "chai": "5.1.0",
