@@ -32,7 +32,7 @@
   },
   "types": "output/main.d.ts",
   "dependencies": {
-    "@oliversalzburg/js-utils": "0.0.38",
+    "@oliversalzburg/js-utils": "0.0.39",
     "execa": "9.1.0",
     "semver": "7.6.2",
     "which": "4.0.0"
