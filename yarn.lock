@@ -321,10 +321,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/which@npm:3.0.3":
-  version: 3.0.3
-  resolution: "@types/which@npm:3.0.3"
-  checksum: 10c0/553ff9ae9757ff1f99097b2b40e7ed3a317b1ca8507a9daaa5a429d63670f5d4b69a9b96afe00dfb3bdefa8b274441c93f978b7dd98b9af48daf9f07494689a5
+"@types/which@npm:3.0.4":
+  version: 3.0.4
+  resolution: "@types/which@npm:3.0.4"
+  checksum: 10c0/036e4cb243ebfd5cf4893be2ab3b9a60a22368811c1f1c78fb8fc70cadc274024282d04b8d7c0948268372600003252d84e2d3a5e064014a543a5da235c5989d
   languageName: node
   linkType: hard
 
@@ -3118,7 +3118,7 @@ __metadata:
     "@types/mock-fs": "npm:4.13.4"
     "@types/node": "npm:20.12.13"
     "@types/semver": "npm:7.5.8"
-    "@types/which": "npm:3.0.3"
+    "@types/which": "npm:3.0.4"
     c8: "npm:9.1.0"
     chai: "npm:5.1.1"
     eslint: "npm:8.57.0"
