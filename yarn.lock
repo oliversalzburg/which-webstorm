@@ -209,10 +209,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@oliversalzburg/js-utils@npm:0.0.45":
-  version: 0.0.45
-  resolution: "@oliversalzburg/js-utils@npm:0.0.45"
-  checksum: 10c0/3f2a1ac88da3da806ec272e57c62bc41496228ee726469ffad6f4491d9d3c06f5d410b0bc98142f90400defed6eb06751a9ba3a759c97250b7fb7e11344541b9
+"@oliversalzburg/js-utils@npm:0.0.46":
+  version: 0.0.46
+  resolution: "@oliversalzburg/js-utils@npm:0.0.46"
+  checksum: 10c0/613e9ad206791a015c284734509f741fcbf0eefcfe18a5330599703612760447d1ed5d95805bf41fdb455666f3546b6d57156b9afa08b17d93161a3ed415ac4a
   languageName: node
   linkType: hard
 
@@ -3111,7 +3111,7 @@ __metadata:
   resolution: "which-webstorm@workspace:."
   dependencies:
     "@eslint/js": "npm:9.3.0"
-    "@oliversalzburg/js-utils": "npm:0.0.45"
+    "@oliversalzburg/js-utils": "npm:0.0.46"
     "@types/chai": "npm:4.3.16"
     "@types/eslint": "npm:8.56.10"
     "@types/mocha": "npm:10.0.6"
