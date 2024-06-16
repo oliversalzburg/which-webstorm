@@ -48,7 +48,7 @@
     "@types/which": "3.0.4",
     "c8": "10.1.2",
     "chai": "5.1.1",
-    "eslint": "9.4.0",
+    "eslint": "9.5.0",
     "eslint-config-prettier": "9.1.0",
     "globals": "15.5.0",
     "lint-staged": "15.2.7",
