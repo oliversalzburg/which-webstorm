@@ -1,8 +1,11 @@
 import eslint from "@eslint/js";
+import prettierConfig from "eslint-config-prettier";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 
 export default tseslint.config(
+  eslint.configs.recommended,
+  prettierConfig,
   {
     ignores: [".yarn/", ".git/", "coverage/", "node_modules/", "output/", "*.config.*"],
   },
@@ -18,7 +21,6 @@ export default tseslint.config(
   },
   {
     files: ["**/*.cjs"],
-    extends: [eslint.configs.recommended],
     languageOptions: {
       parserOptions: {
         sourceType: "commonjs",
@@ -27,7 +29,6 @@ export default tseslint.config(
   },
   {
     files: ["**/*.js", "**/*.mjs"],
-    extends: [eslint.configs.recommended],
     languageOptions: {
       parserOptions: {
         sourceType: "module",
@@ -36,15 +37,12 @@ export default tseslint.config(
   },
   {
     files: ["**/*.cts", "**/*.mts", "**/*.ts"],
-    extends: [
-      eslint.configs.recommended,
-      ...tseslint.configs.strictTypeChecked,
-      ...tseslint.configs.stylisticTypeChecked,
-    ],
+    extends: tseslint.configs.strictTypeChecked,
     languageOptions: {
       parserOptions: {
         project: true,
         tsconfigRootDir: import.meta.dirname,
+        EXPERIMENTAL_useProjectService: true,
       },
     },
     rules: {
@@ -56,8 +54,26 @@ export default tseslint.config(
         },
       ],
       "no-unused-vars": "off",
-      "@typescript-eslint/no-unused-vars": ["error", { args: "none" }],
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        {
+          args: "all",
+          argsIgnorePattern: "^_",
+          caughtErrors: "all",
+          caughtErrorsIgnorePattern: "^_",
+          destructuredArrayIgnorePattern: "^_",
+          varsIgnorePattern: "^_",
+          ignoreRestSiblings: true,
+        },
+      ],
       "@typescript-eslint/no-var-requires": "off",
+      "@typescript-eslint/restrict-template-expressions": [
+        "error",
+        {
+          allowBoolean: true,
+          allowNumber: true,
+        },
+      ],
     },
   },
   {

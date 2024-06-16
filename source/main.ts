@@ -12,7 +12,7 @@ export class WebStormLocator {
   findWebstorm() {
     try {
       return which.sync(this.webstormBinary());
-    } catch (error) {
+    } catch (_error) {
       // Not found on PATH, attempt manual lookup.
       return this.findManual();
     }
@@ -20,7 +20,7 @@ export class WebStormLocator {
   async findWebstormAsync() {
     try {
       return await which(this.webstormBinary());
-    } catch (error) {
+    } catch (_error) {
       // Not found on PATH, attempt manual lookup.
       return this.findManual();
     }
