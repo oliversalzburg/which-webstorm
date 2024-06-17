@@ -50,7 +50,7 @@
     "chai": "5.1.1",
     "eslint": "9.5.0",
     "eslint-config-prettier": "9.1.0",
-    "globals": "15.5.0",
+    "globals": "15.6.0",
     "lint-staged": "15.2.7",
     "mocha": "10.4.0",
     "mock-fs": "5.2.0",
