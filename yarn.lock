@@ -329,16 +329,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/mock-fs@npm:4.13.4":
-  version: 4.13.4
-  resolution: "@types/mock-fs@npm:4.13.4"
-  dependencies:
-    "@types/node": "npm:*"
-  checksum: 10c0/687c8e36d91031529924fd89011b7a87167ea33a1b92a9d845f0feb1a5157f168412c62ee308e57b9a71fd938197b4c71ca1784eb44e8a7cbdd816011ffd7f65
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:*, @types/node@npm:20.14.5":
+"@types/node@npm:20.14.5":
   version: 20.14.5
   resolution: "@types/node@npm:20.14.5"
   dependencies:
@@ -2419,13 +2410,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mock-fs@npm:5.2.0":
-  version: 5.2.0
-  resolution: "mock-fs@npm:5.2.0"
-  checksum: 10c0/e917e71295ee9d805c7d9ab0214a66658db0212f35731ba0c75dc1ccbb9964e6787a6d725561f05fcf569c64cf4a1176f5ce438f98b009227520f646f8abf174
-  languageName: node
-  linkType: hard
-
 "ms@npm:2.1.2":
   version: 2.1.2
   resolution: "ms@npm:2.1.2"
@@ -3366,7 +3350,6 @@ __metadata:
     "@types/chai": "npm:4.3.16"
     "@types/eslint": "npm:8.56.10"
     "@types/mocha": "npm:10.0.6"
-    "@types/mock-fs": "npm:4.13.4"
     "@types/node": "npm:20.14.5"
     "@types/semver": "npm:7.5.8"
     "@types/which": "npm:3.0.4"
@@ -3380,7 +3363,6 @@ __metadata:
     globals: "npm:15.6.0"
     lint-staged: "npm:15.2.7"
     mocha: "npm:10.4.0"
-    mock-fs: "npm:5.2.0"
     prettier: "npm:3.3.2"
     prettier-package-json: "npm:2.8.0"
     prettier-plugin-organize-imports: "npm:3.2.4"
