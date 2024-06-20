@@ -23,7 +23,7 @@ jobs:
         if: ${{ github.event_name == 'schedule' }}
         run: test -z $(git rev-list --after="1 month" ${{ github.sha }}) && echo "name=should_run::false" >> $GITHUB_OUTPUT
 
-  qa-main:
+  qa:
     name: 🔹 QA
     needs:
       - check-date
@@ -34,7 +34,7 @@ jobs:
     name: 🔹 Publish
     needs:
       - check-date
-      - qa-main
+      - qa
     permissions:
       contents: write
       id-token: write

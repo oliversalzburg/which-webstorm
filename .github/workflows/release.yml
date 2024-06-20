@@ -9,13 +9,13 @@ on:
 concurrency: release
 
 jobs:
-  qa-tag:
+  qa:
     name: 🔹 QA
     uses: oliversalzburg/workflows/.github/workflows/qa-npm-package.yml@main
 
   release:
     name: 🔹 Publish
-    needs: qa-tag
+    needs: qa
     permissions:
       contents: write
       id-token: write
