@@ -34,3 +34,9 @@ Open a specific directory in WebStorm:
 ```shell
 $ wstorm /home/oliver/projects/which-webstorm
 ```
+
+## Release Process
+
+```
+npm version patch --message "chore: Version bump %s"
+```

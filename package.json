@@ -24,12 +24,10 @@
     "lint:prettier": "prettier --check .",
     "lint:tsc": "tsc --noEmit",
     "nextversion": "./.scripts/manifest-version.cjs",
-    "npm:publish": "npm publish",
-    "npm:publish:major": "npm version major && npm publish",
-    "npm:publish:minor": "npm version minor && npm publish",
-    "npm:publish:patch": "npm version patch && npm publish",
     "test": "yarn build && node $(yarn bin mocha) output/*.test.js",
-    "test:coverage": "tsc && c8 --reporter=html-spa node $(yarn bin mocha) output/*.test.js"
+    "test:coverage": "tsc && c8 --reporter=html-spa node $(yarn bin mocha) output/*.test.js",
+    "preversion": "yarn run lint && yarn run build && yarn run test",
+    "postversion": "git push"
   },
   "types": "output/main.d.ts",
   "dependencies": {
