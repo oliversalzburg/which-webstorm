@@ -14,7 +14,6 @@ jobs:
     uses: oliversalzburg/workflows/.github/workflows/qa-npm-package.yml@main
 
   release:
-    if: github.ref_name == github.event.repository.default_branch
     name: 🔹 Publish
     needs: qa-tag
     permissions:
