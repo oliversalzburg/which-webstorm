@@ -6,7 +6,7 @@ on:
       - main
   workflow_dispatch:
     inputs:
-      with-github-release:
+      wants-github-release:
         default: false
         description: Create a GitHub release?
         required: false
@@ -33,4 +33,4 @@ jobs:
     uses: oliversalzburg/workflows/.github/workflows/publish-npm-package.yml@main
     with:
       is-canary: true
-      with-github-release: ${{ inputs.with-github-release || false }}
+      wants-github-release: ${{ inputs.wants-github-release || false }}

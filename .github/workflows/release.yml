@@ -26,4 +26,4 @@ jobs:
     uses: oliversalzburg/workflows/.github/workflows/publish-npm-package.yml@main
     with:
       is-canary: false
-      with-github-release: true
+      wants-github-release: true
