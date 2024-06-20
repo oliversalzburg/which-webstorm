@@ -2,7 +2,7 @@
 
 Finds WebStorm
 
-[![NPM Version](https://img.shields.io/npm/v/which-webstorm)](https://www.npmjs.com/package/which-webstorm) [![QA](https://github.com/oliversalzburg/which-webstorm/actions/workflows/test.yml/badge.svg)](https://github.com/oliversalzburg/which-webstorm/actions/workflows/test.yml)
+[![NPM Version](https://img.shields.io/npm/v/which-webstorm)](https://www.npmjs.com/package/which-webstorm) [![QA](https://github.com/oliversalzburg/which-webstorm/actions/workflows/qa.yml/badge.svg)](https://github.com/oliversalzburg/which-webstorm/actions/workflows/qa.yml)
 
 ## Usage
 
