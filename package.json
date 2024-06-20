@@ -23,6 +23,7 @@
     "lint:eslint": "eslint .",
     "lint:prettier": "prettier --check .",
     "lint:tsc": "tsc --noEmit",
+    "nextversion": "./.scripts/manifest-version.cjs",
     "npm:publish": "npm publish",
     "npm:publish:major": "npm version major && npm publish",
     "npm:publish:minor": "npm version minor && npm publish",

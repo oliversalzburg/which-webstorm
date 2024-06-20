@@ -1,0 +1,30 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+concurrency: release
+
+jobs:
+  qa-tag:
+    name: 🔹 QA
+    uses: oliversalzburg/workflows/.github/workflows/qa-npm-package.yml@main
+
+  release:
+    if: github.ref_name == github.event.repository.default_branch
+    name: 🔹 Publish
+    needs: qa-tag
+    permissions:
+      contents: write
+      id-token: write
+      packages: write
+      pull-requests: read
+    secrets:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+    uses: oliversalzburg/workflows/.github/workflows/publish-npm-package.yml@main
+    with:
+      is-canary: false
+      with-github-release: true
