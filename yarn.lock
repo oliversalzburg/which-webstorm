@@ -1283,9 +1283,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"execa@npm:9.2.0":
-  version: 9.2.0
-  resolution: "execa@npm:9.2.0"
+"execa@npm:9.3.0":
+  version: 9.3.0
+  resolution: "execa@npm:9.3.0"
   dependencies:
     "@sindresorhus/merge-streams": "npm:^4.0.0"
     cross-spawn: "npm:^7.0.3"
@@ -1299,7 +1299,7 @@ __metadata:
     signal-exit: "npm:^4.1.0"
     strip-final-newline: "npm:^4.0.0"
     yoctocolors: "npm:^2.0.0"
-  checksum: 10c0/339e69bd01bfdc032122ef18d412ccda4386c7752b864607c2e8683a1531b4aab436744aeacee548e1be239adb2b52888da64ffd761e7e22f56f8f14cf66e4a7
+  checksum: 10c0/99ae08e7fb9172d25c453c2a9c414b54c7689e72f68263f6da7bc94c7011720dc8129cc64c2e3be44fb0c6ae8e37a08d346a61dbcfe9f1e79ad24364da2c48ce
   languageName: node
   linkType: hard
 
@@ -3359,7 +3359,7 @@ __metadata:
     eslint-config-prettier: "npm:9.1.0"
     eslint-plugin-jsdoc: "npm:48.2.12"
     eslint-plugin-tsdoc: "npm:0.3.0"
-    execa: "npm:9.2.0"
+    execa: "npm:9.3.0"
     globals: "npm:15.6.0"
     lint-staged: "npm:15.2.7"
     mocha: "npm:10.4.0"
