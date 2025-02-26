@@ -1,6 +1,6 @@
-import { mustExist } from "@oliversalzburg/js-utils/data/nil.js";
 import { existsSync, promises, readdirSync } from "node:fs";
 import { join } from "node:path";
+import { mustExist } from "@oliversalzburg/js-utils/data/nil.js";
 import { coerce, gt, valid } from "semver";
 import which from "which";
 

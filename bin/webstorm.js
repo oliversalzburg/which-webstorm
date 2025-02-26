@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-import { execa } from "execa";
 import { statSync } from "node:fs";
 import { resolve } from "node:path";
+import { execa } from "execa";
 import { WebStormLocator } from "../output/main.js";
 
 new WebStormLocator().findWebstormAsync().then(webstorm => {
