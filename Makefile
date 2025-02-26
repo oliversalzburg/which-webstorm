@@ -19,7 +19,7 @@ lint:
 
 test: clean
 	yarn tsc
-	yarn c8 --reporter=html-spa node $(shell yarn bin mocha) output/*.test.js
+	yarn c8 --reporter=html-spa mocha output/*.test.js
 
 run: clean build
 	node ./output/main.js
