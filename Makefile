@@ -25,5 +25,8 @@ run: clean build
 	node ./output/main.js
 
 
-output:
+node_modules:
+	yarn install
+
+output: node_modules
 	yarn tsc
