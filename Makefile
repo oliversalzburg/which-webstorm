@@ -1,6 +1,6 @@
 .PHONY: default build clean docs git-hook pretty lint test run
 
-default: clean build
+default: build
 
 build: output
 
