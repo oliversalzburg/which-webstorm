@@ -7,7 +7,10 @@
   "author": "Oliver Salzburg <oliver.salzburg@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/oliversalzburg/which-webstorm.git"
+    "url": "git+https://github.com/oliversalzburg/which-webstorm.git"
+  },
+  "bugs": {
+    "url": "https://github.com/oliversalzburg/which-webstorm/issues"
   },
   "type": "module",
   "main": "output/main.js",
