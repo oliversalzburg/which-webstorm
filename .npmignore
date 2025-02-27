@@ -8,10 +8,9 @@
 biome.json
 build.js
 coverage/
-lint-staged.config.js
 node_modules/
 output/*.test.*
-output/tsconfig.tsbuildinfo
 renovate.json
 source/
 tsconfig.json
+tsconfig.tsbuildinfo

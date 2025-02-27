@@ -13,3 +13,4 @@ build
 coverage
 node_modules
 output
+tsconfig.tsbuildinfo
