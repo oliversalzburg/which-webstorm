@@ -30,9 +30,11 @@ jobs:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     uses: oliversalzburg/workflows/.github/workflows/publish-npm-package.yml@main
     with:
+      draft-only: true
       has-mkdocs: false
       has-github-pages: false
       is-canary: true
       is-nightly: false
+      publish-documentation: false
       publish-github-release: true
       release-tag: dev
