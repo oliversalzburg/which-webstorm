@@ -3,7 +3,6 @@ name: Nightly
 on:
   schedule:
     - cron: "13 3 7 * *"
-  workflow_dispatch:
 
 concurrency: pre-release
 
@@ -50,5 +49,9 @@ jobs:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     uses: oliversalzburg/workflows/.github/workflows/publish-npm-package.yml@main
     with:
+      has-mkdocs: false
+      has-github-pages: false
       is-canary: true
-      wants-github-release: true
+      is-nightly: true
+      publish-github-release: true
+      release-tag: nightly
