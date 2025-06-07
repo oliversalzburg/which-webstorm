@@ -50,6 +50,5 @@
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
-  },
-  "packageManager": "yarn@4.9.1"
+  }
 }
