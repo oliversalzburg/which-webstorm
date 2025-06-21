@@ -105,8 +105,8 @@ export class WebStormLocator {
         .map(entry => {
           const ver = entry.match(/WebStorm[^0-9]([0-9.]+)/) ?? ["", ""];
           return {
-            version: mustExist(valid(coerce(ver[1]))),
             path: entry,
+            version: mustExist(valid(coerce(ver[1]))),
           };
         })
         .sort(this.#customSort.bind(this)),
