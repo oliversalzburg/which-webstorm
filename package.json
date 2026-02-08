@@ -27,7 +27,7 @@
   "dependencies": {
     "@oliversalzburg/js-utils": "0.5.0",
     "execa": "9.6.1",
-    "semver": "7.7.3",
+    "semver": "7.7.4",
     "which": "6.0.0"
   },
   "devDependencies": {
