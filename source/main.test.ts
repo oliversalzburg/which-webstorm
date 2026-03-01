@@ -1,6 +1,6 @@
-import { expect } from "chai";
+import assert from "node:assert";
+import { after, before, describe, it } from "node:test";
 import { execa } from "execa";
-import { after, before, describe, it } from "mocha";
 import whichWebstorm from "./main.js";
 
 describe("which-webstorm", () => {
@@ -19,7 +19,7 @@ describe("which-webstorm", () => {
     });
 
     it("should return the x86 binary name", () => {
-      expect(whichWebstorm.webstormBinary()).to.equal("webstorm.exe");
+      assert.strictEqual(whichWebstorm.webstormBinary(), "webstorm.exe");
     });
   });
 
@@ -38,14 +38,14 @@ describe("which-webstorm", () => {
     });
 
     it("should return the x64 binary name", () => {
-      expect(whichWebstorm.webstormBinary()).to.equal("webstorm64.exe");
+      assert.strictEqual(whichWebstorm.webstormBinary(), "webstorm64.exe");
     });
   });
 
   describe("CLI", () => {
     it("should not throw when being executed", async () => {
       const cli = await execa("node", ["output/main.js"]);
-      return expect(cli.exitCode).to.equal(0);
+      assert.strictEqual(cli.exitCode, 0);
     });
   });
 });

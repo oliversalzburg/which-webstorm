@@ -22,7 +22,7 @@ lint: node_modules
 	npm exec -- tsc --noEmit
 
 test: build
-	npm exec -- c8 --reporter=html-spa mocha output/*.test.js
+	node --enable-source-maps --test output/*.test.js
 
 run: build
 	node ./output/main.js

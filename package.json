@@ -25,28 +25,23 @@
   },
   "types": "output/main.d.ts",
   "dependencies": {
-    "@oliversalzburg/js-utils": "0.5.0",
+    "@oliversalzburg/js-utils": "0.6.0",
     "execa": "9.6.1",
     "semver": "7.7.4",
     "which": "6.0.1"
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.4",
-    "@types/chai": "5.2.3",
-    "@types/mocha": "10.0.10",
     "@types/node": "24.10.13",
     "@types/semver": "7.7.1",
     "@types/which": "3.0.4",
-    "c8": "11.0.0",
-    "chai": "6.2.2",
-    "mocha": "11.7.5",
     "typescript": "5.9.3"
   },
   "keywords": [
     "webstorm"
   ],
   "engines": {
-    "node": ">= 18"
+    "node": ">= 20"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
