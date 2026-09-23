@@ -31,7 +31,7 @@
     "which": "7.0.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.5.13",
+    "@biomejs/biome": "2.5.14",
     "@types/node": "26.5.1",
     "@types/semver": "7.8.0",
     "@types/which": "3.0.4",
